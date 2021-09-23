@@ -88,6 +88,13 @@ input {
 	margin-top: 2rem;
 }
 
+.delete_button{
+	color: white;
+	background-color:black;
+	border-radius: 50%;	
+	border: 1;
+}
+
 .action-button {
 	font: inherit;
 	font-size: 1.25rem;
@@ -126,10 +133,16 @@ input {
     border-radius: 10px;
 }
 
-.container > * {
-    display: inline-block;
+.container{
+    display: flex;
+  	flex-direction:row;
+	flex-wrap: wrap;
+	justify-content:space-around;
+	align-items: stretch;
+	align-content: flex-start;
     
 }
+
 .table {
 	width:100%;
 	border:1px solid $color-form-highlight;
