@@ -10,6 +10,7 @@
         body {
             background-color:rgba(37, 38, 39);
             background-repeat: no-repeat;
+            background-image: url("https://image.freepik.com/vector-gratis/vector-fondo-patio-recreo-dibujos-animados-parque-gente-ninos-jugando_33099-1197.jpg");
             background-attachment: fixed;
             background-size: 100% 100%;
             color:white;
@@ -24,7 +25,7 @@
         }
 
         .top {
-            background-color:rgba(89, 92, 95) ;
+            background-color:rgba(248, 248, 255) ;
             font-size: xx-large;
             height:auto;
             justify-content: center;
@@ -34,28 +35,52 @@
             padding-bottom: 5px;
             padding-left: 8px;
             border-radius: 10px;
+            color: black;
         }
         .texto{
-            text-align: center;
-            font-size: 15px;
+            text-align: left;
+            font-size: 18px;
+            padding-left: 8px;
+            color:#000000;
+
+
+        }
+        .menu{
+            padding-left: 8px;
+            color:black;
+        }
+        .menu li{
+            list-style: none;
+            border: 1px solid black;
+            width: 350px;
+            height: 50px;
+            background: white;
+            text-align:center;
+        }
+        .menu li a{
+            color:black;
+            font weight: bold;
+        }
+        .sub{
+            text-align:left;
+            font-size:18px;
 
         }
     </style>
 </head>
 <body>
-    <div class = "top">Bienestar Familiar</div>
-    <p class="texto"> Bienvenidos al sistema de información del bienestar familiar.<br/><br/>Por favor seleccione la opción que desea consultar.</p>
-    <p></p>
-    <ol>
+    <div class = "top" >Bienestar Familiar</div>
+    <h2 class="texto"> Bienvenidos al sistema de información del bienestar familiar.<br/><br/>Por favor seleccione la opción que desea consultar.</h2>
+    <h2 class="texto">Menú:</h2>
+    
+    <ol class="menu">
         <li><a href = "crud_hijo.html">CRUD tabla HIJO</a> </li>
         <li><a href = "crud_padre.html">CRUD tabla PADRE</a></li>
-        <li>Consultas:</li>
-        <ul>
-            <li><a href = "consulta_1.html">Consulta 1. Hijos de un padre seleccionado</a></li>
-            <li><a href = "consulta_2.html">Consulta 2. Padres sin hijos</a></li>
-            <li><a href = "consulta_3.html">Consulta 3. Hijos sin padres</a></li>
-            <li><a href = "consulta_4.html">Consulta 4. Padres con el número de hijos</a></li>
-        </ul>
+        <h2 color=black>Consultas:</h2>
+            <li><a href = "consulta_1.html">Consulta 1.<br/><br/> Hijos de un padre seleccionado</a></li>
+            <li><a href = "consulta_2.html">Consulta 2.<br/><br/> Padres sin hijos</a></li>
+            <li><a href = "consulta_3.html">Consulta 3.<br/><br/> Hijos sin padres</a></li>
+            <li><a href = "consulta_4.html">Consulta 4.<br/><br/> Padres con el número de hijos</a></li>
     </ol>
 
 </body>
