@@ -6,19 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-
-    .top {
-        background-color:rgba(89, 92, 95) ;
-        font-size: xx-large;
-        height:auto;
-        justify-content: left;
-        box-shadow: 0px 5px 5px black;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        padding-left: 8px;
-    }
-    </style>
 </head>
 <body>
     <div class = "top">CRUD HIJO</div>
@@ -27,11 +14,11 @@
         <div class="card">
             <form class="card-form">
                 <div class="input">
-                    <input type="text" class="input-field" value="12345" required/>
+                    <input type="text" class="input-field" value="" required/>
                     <label class="input-label">ID*</label>
                 </div>
                     <div class="input">
-                    <input type="text" class="input-field" value="juan" required/>
+                    <input type="text" class="input-field" value="" required/>
                     <label class="input-label">Nombre*</label>
                 </div>
                     <div class="input">
@@ -44,6 +31,40 @@
             </form>
             <div class="card-info">
                 <p>Los campos con * son obligatorios para llenar</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="table">
+                <div class="table-header">
+                    <div class="header__item"><a id="name" class="filter__link" href="#">Name</a></div>
+                    <div class="header__item"><a id="wins" class="filter__link filter__link--number" href="#">Wins</a></div>
+                    <div class="header__item"><a id="draws" class="filter__link filter__link--number" href="#">Draws</a></div>
+                    <div class="header__item"><a id="losses" class="filter__link filter__link--number" href="#">Losses</a></div>
+                    <div class="header__item"><a id="total" class="filter__link filter__link--number" href="#">Total</a></div>
+                </div>
+                <div class="table-content">	
+                    <div class="table-row">		
+                        <div class="table-data">Tom</div>
+                        <div class="table-data">2</div>
+                        <div class="table-data">0</div>
+                        <div class="table-data">1</div>
+                        <div class="table-data">5</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-data">Dick</div>
+                        <div class="table-data">1</div>
+                        <div class="table-data">1</div>
+                        <div class="table-data">2</div>
+                        <div class="table-data">3</div>
+                    </div>
+                    <div class="table-row">
+                        <div class="table-data">Harry</div>
+                        <div class="table-data">0</div>
+                        <div class="table-data">2</div>
+                        <div class="table-data">2</div>
+                        <div class="table-data">2</div>
+                    </div>
+                </div>	
             </div>
         </div>
     </div>
