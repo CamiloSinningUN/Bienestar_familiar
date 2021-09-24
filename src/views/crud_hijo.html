@@ -38,38 +38,67 @@
         <div class="card">
             <div class="table">
                 <div class="table-header">
-                    <div class="header__item"><a id="name" class="filter__link" href="#">Name</a></div>
-                    <div class="header__item"><a id="wins" class="filter__link filter__link--number" href="#">Wins</a></div>
-                    <div class="header__item"><a id="draws" class="filter__link filter__link--number" href="#">Draws</a></div>
-                    <div class="header__item"><a id="losses" class="filter__link filter__link--number" href="#">Losses</a></div>
-                    <div class="header__item"><a id="total" class="filter__link filter__link--number" href="#">Total</a></div>
+                    <div class="header__item"><a id="ID" class="filter__link" href="#">ID</a></div>
+                    <div class="header__item"><a id="nom" class="filter__link filter__link--number" href="#">Nombre</a></div>
+                    <div class="header__item"><a id="hijode" class="filter__link filter__link--number" href="#">Hijo de</a></div>
+                    <div class="header__item"><a id="delete" class="filter__link filter__link--number" href="#">Borrar</a></div>
                 </div>
                 <div class="table-content">	
                     <div class="table-row">		
                         <div class="table-data">Tom</div>
                         <div class="table-data">2</div>
                         <div class="table-data">0</div>
-                        <div class="table-data">1</div>
-                        <div class="table-data">5</div>
+                        <div class="table-data"><button class = "delete_button">x</button></div>
                     </div>
                     <div class="table-row">
                         <div class="table-data">Dick</div>
                         <div class="table-data">1</div>
                         <div class="table-data">1</div>
-                        <div class="table-data">2</div>
-                        <div class="table-data">3</div>
+                        <div class="table-data"><button class = "delete_button">x</button></div>
                     </div>
                     <div class="table-row">
                         <div class="table-data">Harry</div>
                         <div class="table-data">0</div>
                         <div class="table-data">2</div>
-                        <div class="table-data">2</div>
-                        <div class="table-data">2</div>
+                        <div class="table-data"><button class = "delete_button">x</button></div>
                     </div>
                 </div>	
             </div>
         </div>
+        <table id="tableData" class="table table-fixed">
+            <thead>
+              <tr>
+              </tr>
+            </thead>
+            <tbody class="tbody" >
+            </tbody>
     </div>
+    <script>
+        $(document).ready(() => {
+
+$.ajax({
+    url: "http://localhost:9000/list", 
+    method: 'GET',
+    success: function(response){
+        if(response.rows.length > 0){
+            for(let index = 0; index < response.rows.length; index++) {
+                var newRow = $("<tr>");
+                var cols = "";
+                var firstname = '';
+                var lastname = '';
+                var gender = '';
+                cols += '<td> '+ response.rows[index].firstname +'</td>';
+                cols += '<td> '+ response.rows[index].lastname +'</td>';
+                cols += '<td> '+ response.rows[index].gender+'</td>';                
+                newRow.append(cols);
+                $("#tableData .tbody").append(newRow);
+            }  
+
+        }
+    }
+})
+})
+    </script>
     
 </body>
 </html>
