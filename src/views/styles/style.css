@@ -24,7 +24,7 @@ img {
   margin-left: 0;
   display: flex;
   border-width: thin;
-  border-color: #191D32;
+  border-color: #191d32;
   border-style: solid;
   flex-direction: column;
   width: 100%;
@@ -60,7 +60,7 @@ img {
 .action {
   margin-top: 2rem;
 }
-.atras{
+.atras {
   margin-top: 1rem;
   width: 100px;
   height: 50px;
@@ -94,7 +94,7 @@ img {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content:space-between;
+  justify-content: space-between;
   font-size: xx-large;
   box-shadow: 0 5px 5px rgb(253, 236, 236);
   padding-top: 5px;
@@ -115,12 +115,23 @@ img {
   display: flex;
   width: 100%;
   border-radius: 10px;
-  background: #191D32;
+  background: #191d32;
 }
+
+img.edit {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4px;
+  width: 25%;
+  height: auto;
+}
+
 .table-row {
   display: flex;
   width: 100%;
 }
+
 .table-data,
 .header__item {
   flex: 1 1 20%;
