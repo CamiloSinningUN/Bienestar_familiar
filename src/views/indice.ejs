@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab_3 Base de datos</title>
     <link rel="stylesheet" href="style.css">
-    <style>
+    <style> a {text-decoration:none;}
+    
 
         
         body {
-            background-color:rgba(37, 38, 39);
+            background-color:rgb(240, 248, 255);
             background-repeat: no-repeat;
-            background-image: url("https://image.freepik.com/vector-gratis/vector-fondo-patio-recreo-dibujos-animados-parque-gente-ninos-jugando_33099-1197.jpg");
             background-attachment: fixed;
             background-size: 100% 100%;
             color:white;
-            font-family: monospace;
+            font-family: "DM Sans", sans-serif;
         }
 
         a{
@@ -28,7 +28,7 @@
         }
 
         .top {
-            background-color:rgba(224, 255, 255) ;
+            background-color:#6658d3 ;
             font-size: 35px;
             height:auto;
             justify-content: center;
@@ -38,15 +38,13 @@
             padding-bottom: 5px;
             padding-left: 8px;
             border-radius: 10px;
-            color: black;
-            font-family: 'Times New Roman',Times, serif;
+            color: white;
         }
         .texto{
             text-align: left;
             font-size: 18px;
             padding-left: 8px;
             color:#000000;
-
 
         }
         .menu{
@@ -56,15 +54,17 @@
         .menu li{
             list-style: none;
             line-height: 50px;
-            border: 1px solid black;
+            border: 3px solid white;
             width: 350px;
             height: 50px;
-            background: white;
+            display: inline-block;
+            background: #6658d3;
             padding-left: 10px;
-            text-align:left;
+            text-align:center;
+            border-radius: 15px;
         }
         .menu li a{
-            color:black;
+            color:white;
             font-weight: bold;
         }
         .texto1{
@@ -76,8 +76,8 @@
 </head>
 <body>
     <div class = "top" >Bienestar Familiar</div>
-    <h2 class="texto"> Bienvenidos al sistema de información del bienestar familiar.<br/><br/>Por favor seleccione la opción que desea consultar.</h2>
-    <h2 class="texto">Menú:</h2>
+    <h2 class="texto"> Bienvenidos al sistema de información del bienestar familiar.<br/><br/>Por favor seleccione la opción que desea consultar.<br/><br/></h2>
+    <h2 class="texto1">CRUD:</h2>
     <ol class="menu">
         <li><a href = "/hijos">CRUD tabla HIJO</a> </li>
         <li><a href = "/padres">CRUD tabla PADRE</a></li>

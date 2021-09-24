@@ -1,4 +1,5 @@
 <%- include('partials/_header'); %>
+
     <div class="container">
         <!-- code here -->
         <div class="card">
@@ -13,7 +14,7 @@
                 </div>
                     <div class="input">
                     <input type="text" class="input-field" name = "hijode"/>
-                    <label class="input-label">Hijo de</label>
+                    <label class="input-label">Hijo de*</label>
                 </div>
                 <div class="action">
                     <button type = "submit" class="action-button">Crear</button>
@@ -47,4 +48,7 @@
             </div>
         </div>
     </div>   
+    <div class="atras" > 
+        <button type = "submit" onclick="history.go(-1);" class="action-button">Atrás </button>
+    </div>
 <% include('partials/_footer') -%>

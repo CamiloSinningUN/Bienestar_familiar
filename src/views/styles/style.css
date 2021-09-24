@@ -9,8 +9,10 @@
 body {
   font-family: "DM Sans", sans-serif;
   line-height: 1.5;
-  background-color: rgb(37, 38, 39);
+  background-color: rgb(240, 248, 255);
   padding: 0 2rem;
+  text-align: center;
+  color: white;
 }
 img {
   max-width: 100%;
@@ -54,6 +56,12 @@ img {
 .action {
   margin-top: 2rem;
 }
+.atras{
+  margin-top: 1rem;
+  width: 100px;
+  height: 50px;
+  float: right;
+}
 .delete_button {
   color: white;
   background-color: black;
@@ -77,11 +85,11 @@ img {
   color: #8597a3;
 }
 .top {
-  background-color: rgb(89, 92, 95);
+  background-color: #6658d3;
   font-size: xx-large;
   height: auto;
   justify-content: left;
-  box-shadow: 0 5px 5px black;
+  box-shadow: 0 5px 5px rgb(253, 236, 236);
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 8px;
