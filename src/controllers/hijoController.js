@@ -19,7 +19,7 @@ controller.save = (req, res) => {
         const query = connection.query('INSERT INTO hijo set ?', data, (err, rows) => {
             console.log(err)
             console.log(rows)
-            res.redirect('/');
+            res.redirect('/hijos');
         });
     });
 };
@@ -50,7 +50,7 @@ controller.delete = (req, res) => {
     const { id } = req.params;
     req.getConnection((err, connection) => {
         connection.query('DELETE FROM hijo WHERE id = ?', [id], (err, rows) => {
-            res.redirect('/');
+            res.redirect('/hijos');
         });
     });
 }

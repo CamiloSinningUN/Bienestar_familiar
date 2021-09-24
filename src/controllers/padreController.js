@@ -50,7 +50,7 @@ controller.delete = (req, res) => {
     const { id } = req.params;
     req.getConnection((err, connection) => {
         connection.query('DELETE FROM padre WHERE id = ?', [id], (err, rows) => {
-            res.redirect('/');
+            res.redirect('/padres');
         });
     });
 }
