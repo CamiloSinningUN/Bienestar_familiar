@@ -6,6 +6,8 @@ const myConnection = require('express-myconnection');
 const app = express();
 
 const indiceRoutes = require('./routes/indice');
+const padreRoutes = require('./routes/padre');
+const hijoRoutes = require('./routes/hijo');
 const { urlencoded } = require('body-parser');
 
 //settings
@@ -26,6 +28,8 @@ app.use(express.urlencoded({extended: false}));
 
 //routes
 app.use('/',indiceRoutes);
+app.use('/',padreRoutes);
+app.use('/',hijoRoutes);
 
 //static files
 app.use(express.static(__dirname + '/views/styles/'));

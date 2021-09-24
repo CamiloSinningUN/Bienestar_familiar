@@ -2,7 +2,7 @@
     <div class="container">
         <!-- code here -->
         <div class="card">
-            <form class="card-form" action="/add" method="post">
+            <form class="card-form" action="/add_hijo" method="post">
                 <div class="input">
                     <input type="text" class="input-field" name = "id" required/>
                     <label class="input-label">ID*</label>
@@ -39,7 +39,7 @@
                                 <div class="table-data"><%= data[i].id %></div>
                                 <div class="table-data"><%= data[i].nom %></div>
                                 <div class="table-data"><%= data[i].hijode %></div>
-                                <div class="table-data"><button class = "delete_button" onclick="location.href='/delete/<%=data[i].id%>'">x</button></div>
+                                <div class="table-data"><button class = "delete_button" onclick="location.href='/delete_hijo/<%=data[i].id%>'">x</button></div>
                             </div>
                         <%} %>
                     <%} %>

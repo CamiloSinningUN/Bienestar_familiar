@@ -24,23 +24,23 @@ controller.save = (req, res) => {
     });
 };
 
-controller.edit = (req, res) => {
-    const { id } = req.params;
-    req.getConnection((err, conn) => {
-        conn.query("SELECT * FROM customer WHERE id = ?", [id], (err, rows) => {
-            res.render('customers_edit', {
-                data: rows[0]
-            })
-        });
-    });
-};
+// controller.edit = (req, res) => {
+//     const { id } = req.params;
+//     req.getConnection((err, conn) => {
+//         conn.query("SELECT * FROM hijo WHERE id = ?", [id], (err, rows) => {
+//             res.render('customers_edit', {
+//                 data: rows[0]
+//             })
+//         });
+//     });
+// };
 
 controller.update = (req, res) => {
     const { id } = req.params;
-    const newCustomer = req.body;
+    const newHijo = req.body;
     req.getConnection((err, conn) => {
 
-        conn.query('UPDATE customer set ? where id = ?', [newCustomer, id], (err, rows) => {
+        conn.query('UPDATE hijo set ? where id = ?', [newHijo, id], (err, rows) => {
             res.redirect('/');
         });
     });
