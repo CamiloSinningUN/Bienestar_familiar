@@ -8,7 +8,7 @@ const app = express();
 const indiceRoutes = require('./routes/indice');
 const padreRoutes = require('./routes/padre');
 const hijoRoutes = require('./routes/hijo');
-const { urlencoded } = require('body-parser');
+const {urlencoded} = require('body-parser');
 
 //settings
 app.set('port', process.env.PORT || 3000);

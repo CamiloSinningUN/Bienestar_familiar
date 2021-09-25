@@ -1,0 +1,29 @@
+<%- include('partials/_header'); %>
+<div class="container">
+    <!-- code here -->
+    <% if(data){ %>
+    <div class="card">
+        <form class="card-form" action="/update_hijo/<%= data.id %>" method="post">
+            <div class="input">
+                <input type="text" class="input-field" name = "id" value = "<%= data.id %>" required/>
+                <label class="input-label">ID*</label>
+            </div>
+                <div class="input">
+                <input type="text" class="input-field" name = "nom" value = "<%= data.nom %>" required/>
+                <label class="input-label">Nombre*</label>
+            </div>
+                <div class="input">
+                <input type="text" class="input-field" name = "hijode" value = "<%= data.hijode %>"/>
+                <label class="input-label">Hijo de*</label>
+            </div>
+            <div class="action">
+                <button type = "submit" class="action-button">Modificar</button>
+            </div>
+        </form>
+        <div class="card-info">
+            <p>Los campos con * son obligatorios para llenar</p>
+        </div>
+    </div>
+    <%}%>
+</div>
+<% include('partials/_footer') -%>

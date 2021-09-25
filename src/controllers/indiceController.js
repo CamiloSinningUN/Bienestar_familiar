@@ -29,4 +29,26 @@ controller.crud_padres = (req, res) => {
         });
     });
 };
+
+controller.hijos_edit = (req, res) => {
+    const { id } = req.params;
+    req.getConnection((err, conn) => {
+        conn.query("SELECT * FROM hijo WHERE id = ?", [id], (err, rows) => {
+            res.render('hijos_edit', {
+                data: rows[0]
+            })
+        });
+    });
+};
+
+controller.edit = (req, res) => {
+    const { id } = req.params;
+    req.getConnection((err, conn) => {
+        conn.query("SELECT * FROM padre WHERE id = ?", [id], (err, rows) => {
+            res.render('padres_edit', {
+                data: rows[0]
+            })
+        });
+    });
+};
 module.exports = controller;
