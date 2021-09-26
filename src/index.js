@@ -31,7 +31,7 @@ app.use('/',indiceRoutes);
 app.use('/',padreRoutes);
 app.use('/',hijoRoutes);
 
-
+//static files
 app.use(express.static(__dirname + '/views/styles/'));
 
 //starting server
