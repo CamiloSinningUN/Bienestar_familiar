@@ -8,7 +8,6 @@ const app = express();
 const indiceRoutes = require('./routes/indice');
 const padreRoutes = require('./routes/padre');
 const hijoRoutes = require('./routes/hijo');
-const consulta2Routes = require ('./routes/consulta_2')
 const { urlencoded } = require('body-parser');
 
 //settings
@@ -21,9 +20,9 @@ app.use(morgan('dev'));
 app.use(myConnection(mysql,{
     host:'localhost',
     user:'root',
-    password: '0258',
+    password: '123456',
     port: 3306,
-    database: 'bienestar_familiar'
+    database: 'bienestar'
 }, 'single'))
 app.use(express.urlencoded({extended: false}));
 
