@@ -20,9 +20,9 @@ app.use(morgan('dev'));
 app.use(myConnection(mysql,{
     host:'localhost',
     user:'root',
-    password: '123456',
+    password: '0258',
     port: 3306,
-    database: 'bienestar'
+    database: 'bienestar_familiar'
 }, 'single'))
 app.use(express.urlencoded({extended: false}));
 
@@ -30,6 +30,7 @@ app.use(express.urlencoded({extended: false}));
 app.use('/',indiceRoutes);
 app.use('/',padreRoutes);
 app.use('/',hijoRoutes);
+
 
 app.use(express.static(__dirname + '/views/styles/'));
 
