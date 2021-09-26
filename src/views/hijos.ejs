@@ -1,11 +1,10 @@
 <%- include('partials/_header'); %>
-
     <div class="container">
         <!-- code here -->
         <div class="card">
             <form class="card-form" action="/add_hijo" method="post">
                 <div class="input">
-                    <input type="text" class="input-field" name = "id" required/>
+                    <input type="number" class="input-field" name = "id" required/>
                     <label class="input-label">ID*</label>
                 </div>
                     <div class="input">
@@ -13,8 +12,8 @@
                     <label class="input-label">Nombre*</label>
                 </div>
                     <div class="input">
-                    <input type="text" class="input-field" name = "hijode"/>
-                    <label class="input-label">Hijo de*</label>
+                    <input type="number" class="input-field" name = "hijode" required/>
+                    <label class="input-label">Hijo de*  (Si no tiene padre poner 0)</label>
                 </div>
                 <div class="action">
                     <button type = "submit" class="action-button">Crear</button>
@@ -24,7 +23,31 @@
                 <p>Los campos con * son obligatorios para llenar</p>
             </div>
         </div>
-        
+        <div >
+            <h1 class="title">Hijos</h1>
+            <div id="edit_hijos" class = "edit_card" >
+                <form class="card-form" action="" method="post" id="form_edit">
+                    <div class="input">
+                        <input type="number" class="input-field" name = "id" id="id_edit" required/>
+                        <label class="input-label">ID*</label>
+                    </div>
+                        <div class="input">
+                        <input type="text" class="input-field" name = "nom" id="nom_edit" required/>
+                        <label class="input-label">Nombre*</label>
+                    </div>
+                        <div class="input">
+                        <input type="number" class="input-field" name = "hijode" id="hijode_edit" required/>
+                        <label class="input-label">Hijo de* (Si no tiene padre poner 0)</label>
+                    </div>
+                    <div class="action">
+                        <button type = "submit" class="action-button">Modificar</button>
+                    </div>
+                </form>
+                <div class="card-info">
+                    <p>Los campos con * son obligatorios para llenar</p>
+                </div>
+            </div>  
+        </div>
         <div class="card">
             <div class="table">
                 <div class="table-header">
@@ -42,13 +65,30 @@
                                 <div class="table-data"><%= data[i].nom %></div>
                                 <div class="table-data"><%= data[i].hijode %></div>
                                 <div class="table-data"><button class = "delete_button" onclick="location.href='/delete_hijo/<%=data[i].id%>'">x</button></div>
-                                <div class="table-data"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDM2My40NTYwMSAzNjMiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTIiIHhtbDpzcGFjZT0icHJlc2VydmUiIGNsYXNzPSIiPjxnPjxwYXRoIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZD0ibTM0MS43MzA0NjkgNDkuMDU0Njg4YzE1LjYwMTU2MiAxNS42NDA2MjQgMTUuNjAxNTYyIDQwLjk1NzAzMSAwIDU2LjU5NzY1NmwtMTcuNjk5MjE5IDE3LjgwMDc4MS04My42OTkyMTktODMuNjk5MjE5IDE3LjgwMDc4MS0xNy44MDA3ODFjMTUuNjQwNjI2LTE1LjYwMTU2MyA0MC45NTcwMzItMTUuNjAxNTYzIDU2LjU5NzY1NyAwem0wIDAiIGZpbGw9IiNmOGVjN2QiIGRhdGEtb3JpZ2luYWw9IiNmOGVjN2QiIHN0eWxlPSIiPjwvcGF0aD48cGF0aCB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGQ9Im0xMzUuNjMyODEyIDMxMS43NTM5MDYtMTI1LjYwMTU2MiA0MS44OTg0MzggNDEuODk4NDM4LTEyNS41OTc2NTZ6bTAgMCIgZmlsbD0iI2Y4ZWM3ZCIgZGF0YS1vcmlnaW5hbD0iI2Y4ZWM3ZCIgc3R5bGU9IiI+PC9wYXRoPjxwYXRoIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZD0ibTUxLjg4NjcxOSAyMjguMDgyMDMxIDE4OC4zNzEwOTMtMTg4LjM3MTA5MyA4My43MjI2NTcgODMuNzE4NzUtMTg4LjM3MTA5NCAxODguMzcxMDkzem0wIDAiIGZpbGw9IiNlNDhlNjYiIGRhdGEtb3JpZ2luYWw9IiNlNDhlNjYiIHN0eWxlPSIiPjwvcGF0aD48cGF0aCB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGQ9Im0zMjEuNjMyODEyIDE0Ljg1MTU2MmMtMTkuNTM1MTU2LTE5LjUtNTEuMTY3OTY4LTE5LjUtNzAuNzAzMTI0IDBsLTE3LjY5OTIxOSAxNy44MDA3ODItMTg4LjM5ODQzOCAxODguMzAwNzgxLS40MDIzNDMuMzk4NDM3Yy0uMDk3NjU3LjEwMTU2My0uMDk3NjU3LjIwMzEyNi0uMTk5MjE5LjIwMzEyNi0uMjYxNzE5LjI3MzQzNy0uNDk2MDk0LjU3NDIxOC0uNjk5MjE5Ljg5ODQzNy0uMTk5MjE5LjMwMDc4MS0uMzk4NDM4LjY5OTIxOS0uNjAxNTYyIDEtLjAwNzgxMy4wNzQyMTktLjA0Mjk2OS4xNDQ1MzEtLjA5NzY1Ny4xOTkyMTktLjEwMTU2Mi4zMDA3ODEtLjMwMDc4MS42MDE1NjItLjQwMjM0My45MDIzNDQgMCAuMDk3NjU2IDAgLjA5NzY1Ni0uMDk3NjU3LjE5OTIxOGwtNDEuODAwNzgxIDEyNS42OTkyMTljLTEuMjI2NTYyIDMuNTc4MTI1LS4yOTI5NjkgNy41NDI5NjkgMi4zOTg0MzggMTAuMTk5MjE5IDEuODk0NTMxIDEuODY3MTg3IDQuNDQ1MzEyIDIuOTEwMTU2IDcuMTAxNTYyIDIuOTAyMzQ0IDEuMDg1OTM4LS4wMTk1MzIgMi4xNjAxNTYtLjE5MTQwNyAzLjE5OTIxOS0uNWwxMjUuNjAxNTYyLTQxLjkwMjM0NGMuMDk3NjU3IDAgLjA5NzY1NyAwIC4wOTc2NTctLjA5NzY1Ni4zMjAzMTItLjA5Mzc1LjYyMTA5My0uMjI2NTYzLjkwMjM0My0uNDAyMzQ0LjA3NDIxOS0uMDExNzE5LjE0NDUzMS0uMDQ2ODc1LjE5OTIxOS0uMDk3NjU2LjcyMjY1Ni0uMzM5ODQ0IDEuMzk4NDM4LS43NzczNDQgMi0xLjMwMDc4Mi4xMDE1NjItLjEwMTU2Mi4xOTkyMTktLjEwMTU2Mi4xOTkyMTktLjE5OTIxOC4xMDE1NjItLjEwMTU2My4zMDA3ODEtLjIwMzEyNi40MDIzNDMtLjQwMjM0NGwxODguMzk4NDM4LTE4OC4xOTkyMTkgMTcuODAwNzgxLTE3LjgwMDc4MWMxOS41LTE5LjUzMTI1IDE5LjUtNTEuMTY3OTY5IDAtNzAuNjk5MjE5em0tMjk1LjgwMDc4MSAzMjMgMzAuMzk4NDM4LTkxLjI5Njg3NCA2MC44MDA3ODEgNjAuNzk2ODc0em0xMDkuODAwNzgxLTQwLjE5OTIxOC02OS42MDE1NjItNjkuNTk3NjU2IDE3NC4xOTkyMTktMTc0LjIwMzEyNiA2OS42MDE1NjIgNjkuNjAxNTYzem0xOTkuMDk3NjU3LTE5OS4wOTc2NTYtMTAuNjk5MjE5IDEwLjY5OTIxOC02OS42MDE1NjItNjkuNjAxNTYyIDEwLjcwMzEyNC0xMC42OTkyMTljMTEuNzEwOTM4LTExLjY5OTIxOSAzMC42ODc1LTExLjY5OTIxOSA0Mi4zOTg0MzggMGwyNy4xOTkyMTkgMjcuMTk5MjE5YzExLjYwMTU2MiAxMS43NTM5MDYgMTEuNjAxNTYyIDMwLjY0ODQzNyAwIDQyLjQwMjM0NHptMCAwIiBmaWxsPSIjMTkxZDMyIiBkYXRhLW9yaWdpbmFsPSIjNjMzMTZkIiBzdHlsZT0iIiBjbGFzcz0iIj48L3BhdGg+PC9nPjwvc3ZnPg==" class="edit" onclick="location.href='/delete_hijo/<%=data[i].id%>'" /></div>
+                                <div class="table-data"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zOnN2Z2pzPSJodHRwOi8vc3ZnanMuY29tL3N2Z2pzIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgeD0iMCIgeT0iMCIgdmlld0JveD0iMCAwIDM2My40NTYwMSAzNjMiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDUxMiA1MTIiIHhtbDpzcGFjZT0icHJlc2VydmUiIGNsYXNzPSIiPjxnPjxwYXRoIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZD0ibTM0MS43MzA0NjkgNDkuMDU0Njg4YzE1LjYwMTU2MiAxNS42NDA2MjQgMTUuNjAxNTYyIDQwLjk1NzAzMSAwIDU2LjU5NzY1NmwtMTcuNjk5MjE5IDE3LjgwMDc4MS04My42OTkyMTktODMuNjk5MjE5IDE3LjgwMDc4MS0xNy44MDA3ODFjMTUuNjQwNjI2LTE1LjYwMTU2MyA0MC45NTcwMzItMTUuNjAxNTYzIDU2LjU5NzY1NyAwem0wIDAiIGZpbGw9IiNmOGVjN2QiIGRhdGEtb3JpZ2luYWw9IiNmOGVjN2QiIHN0eWxlPSIiPjwvcGF0aD48cGF0aCB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGQ9Im0xMzUuNjMyODEyIDMxMS43NTM5MDYtMTI1LjYwMTU2MiA0MS44OTg0MzggNDEuODk4NDM4LTEyNS41OTc2NTZ6bTAgMCIgZmlsbD0iI2Y4ZWM3ZCIgZGF0YS1vcmlnaW5hbD0iI2Y4ZWM3ZCIgc3R5bGU9IiI+PC9wYXRoPjxwYXRoIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgZD0ibTUxLjg4NjcxOSAyMjguMDgyMDMxIDE4OC4zNzEwOTMtMTg4LjM3MTA5MyA4My43MjI2NTcgODMuNzE4NzUtMTg4LjM3MTA5NCAxODguMzcxMDkzem0wIDAiIGZpbGw9IiNlNDhlNjYiIGRhdGEtb3JpZ2luYWw9IiNlNDhlNjYiIHN0eWxlPSIiPjwvcGF0aD48cGF0aCB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGQ9Im0zMjEuNjMyODEyIDE0Ljg1MTU2MmMtMTkuNTM1MTU2LTE5LjUtNTEuMTY3OTY4LTE5LjUtNzAuNzAzMTI0IDBsLTE3LjY5OTIxOSAxNy44MDA3ODItMTg4LjM5ODQzOCAxODguMzAwNzgxLS40MDIzNDMuMzk4NDM3Yy0uMDk3NjU3LjEwMTU2My0uMDk3NjU3LjIwMzEyNi0uMTk5MjE5LjIwMzEyNi0uMjYxNzE5LjI3MzQzNy0uNDk2MDk0LjU3NDIxOC0uNjk5MjE5Ljg5ODQzNy0uMTk5MjE5LjMwMDc4MS0uMzk4NDM4LjY5OTIxOS0uNjAxNTYyIDEtLjAwNzgxMy4wNzQyMTktLjA0Mjk2OS4xNDQ1MzEtLjA5NzY1Ny4xOTkyMTktLjEwMTU2Mi4zMDA3ODEtLjMwMDc4MS42MDE1NjItLjQwMjM0My45MDIzNDQgMCAuMDk3NjU2IDAgLjA5NzY1Ni0uMDk3NjU3LjE5OTIxOGwtNDEuODAwNzgxIDEyNS42OTkyMTljLTEuMjI2NTYyIDMuNTc4MTI1LS4yOTI5NjkgNy41NDI5NjkgMi4zOTg0MzggMTAuMTk5MjE5IDEuODk0NTMxIDEuODY3MTg3IDQuNDQ1MzEyIDIuOTEwMTU2IDcuMTAxNTYyIDIuOTAyMzQ0IDEuMDg1OTM4LS4wMTk1MzIgMi4xNjAxNTYtLjE5MTQwNyAzLjE5OTIxOS0uNWwxMjUuNjAxNTYyLTQxLjkwMjM0NGMuMDk3NjU3IDAgLjA5NzY1NyAwIC4wOTc2NTctLjA5NzY1Ni4zMjAzMTItLjA5Mzc1LjYyMTA5My0uMjI2NTYzLjkwMjM0My0uNDAyMzQ0LjA3NDIxOS0uMDExNzE5LjE0NDUzMS0uMDQ2ODc1LjE5OTIxOS0uMDk3NjU2LjcyMjY1Ni0uMzM5ODQ0IDEuMzk4NDM4LS43NzczNDQgMi0xLjMwMDc4Mi4xMDE1NjItLjEwMTU2Mi4xOTkyMTktLjEwMTU2Mi4xOTkyMTktLjE5OTIxOC4xMDE1NjItLjEwMTU2My4zMDA3ODEtLjIwMzEyNi40MDIzNDMtLjQwMjM0NGwxODguMzk4NDM4LTE4OC4xOTkyMTkgMTcuODAwNzgxLTE3LjgwMDc4MWMxOS41LTE5LjUzMTI1IDE5LjUtNTEuMTY3OTY5IDAtNzAuNjk5MjE5em0tMjk1LjgwMDc4MSAzMjMgMzAuMzk4NDM4LTkxLjI5Njg3NCA2MC44MDA3ODEgNjAuNzk2ODc0em0xMDkuODAwNzgxLTQwLjE5OTIxOC02OS42MDE1NjItNjkuNTk3NjU2IDE3NC4xOTkyMTktMTc0LjIwMzEyNiA2OS42MDE1NjIgNjkuNjAxNTYzem0xOTkuMDk3NjU3LTE5OS4wOTc2NTYtMTAuNjk5MjE5IDEwLjY5OTIxOC02OS42MDE1NjItNjkuNjAxNTYyIDEwLjcwMzEyNC0xMC42OTkyMTljMTEuNzEwOTM4LTExLjY5OTIxOSAzMC42ODc1LTExLjY5OTIxOSA0Mi4zOTg0MzggMGwyNy4xOTkyMTkgMjcuMTk5MjE5YzExLjYwMTU2MiAxMS43NTM5MDYgMTEuNjAxNTYyIDMwLjY0ODQzNyAwIDQyLjQwMjM0NHptMCAwIiBmaWxsPSIjMTkxZDMyIiBkYXRhLW9yaWdpbmFsPSIjNjMzMTZkIiBzdHlsZT0iIiBjbGFzcz0iIj48L3BhdGg+PC9nPjwvc3ZnPg==" class="edit" onclick="edit('<%= data[i].id%>','<%= data[i].nom%>', '<%= data[i].hijode%>')" /></div>
                             </div>
                         <%} %>
                     <%} %>
                 </div>	
             </div>
         </div>
-    </div>   
-    
-<% include('partials/_footer') -%>
+    </div> 
+    <script>
+        document.getElementById("edit_hijos") = none;
+    </script>
+</body>
+<script>
+    function edit(i,j,k) {
+        var x = document.getElementById("edit_hijos");
+        var id = document.getElementById("id_edit");
+        var nom = document.getElementById("nom_edit");
+        var hijode = document.getElementById("hijode_edit");
+        var form = document.getElementById("form_edit");
+        x.style.display = "block";
+        id.value = i;
+        nom.value = j;
+        hijode.value = k;
+        form.action = "/update_hijo/"+i;
+    }
+</script>
+</html>

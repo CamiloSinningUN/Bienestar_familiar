@@ -7,6 +7,16 @@
   box-sizing: border-box;
 }
 
+.title{
+  background: linear-gradient(0deg, rgba(25,29,50,1) 0%, rgba(102,88,211,1) 100%);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding-left: 100px;
+  padding-right: 100px;
+  height: 50px;
+  margin-top: 0px;
+}
+
 body {
   font-family: "DM Sans", sans-serif;
   line-height: 1.5;
@@ -111,6 +121,30 @@ img {
   align-items: stretch;
   align-content: flex-start;
 }
+.container2 {
+  margin-top: 0px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: stretch;
+  align-content: flex-start;
+}
+.edit_card{
+  margin-top: 20px;
+  margin-left: 0;
+  display: flex;
+  border-width: thin;
+  border-color: #191d32;
+  border-style: solid;
+  flex-direction: column;
+  width: 100%;
+  max-width: 425px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 0.75rem;
+  display: none;
+}
 .table-header {
   display: flex;
   width: 100%;
@@ -146,4 +180,29 @@ img.edit {
   text-decoration: none;
   position: relative;
   display: inline-block;
+}
+
+/* The alert message box */
+.alert {
+  padding: 20px;
+  background-color: #f44336; /* Red */
+  color: white;
+  margin-bottom: 15px;
+}
+
+/* The close button */
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+  color: black;
 }
