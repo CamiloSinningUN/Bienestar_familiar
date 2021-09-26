@@ -26,16 +26,4 @@ controller.crud_padres = (req, res) => {
     });
 };
 
-controller.cons2 = (req, res) => {
-    req.getConnection((err, conn) => {
-        conn.query('SELECT * FROM padre left outer join hijo on padre.id=hijo.hijode where hijo.hijode=0', (err, rows) => {
-            res.render('consulta2', {
-                data: rows,
-                error: 0
-            });
-        });
-    });
-};
-
-
 module.exports = controller;
