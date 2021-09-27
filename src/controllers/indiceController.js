@@ -40,5 +40,17 @@ controller.cons2 = (req, res) => {
     });
 };
 
+controller.cons3 = (req, res) => {
+    req.getConnection((err, conn) => {
+        conn.query('SELECT id, nom, coalesce(hijode,"No tiene padre")as padre from hijo;', (err, rows) => {
+            console.log(err)
+            console.log(rows)
+            res.render('consulta3', {
+                data: rows,
+                error: 0
+            });
+        });
+    });
+};
 
 module.exports = controller;
