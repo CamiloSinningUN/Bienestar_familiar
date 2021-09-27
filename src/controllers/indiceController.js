@@ -53,4 +53,16 @@ controller.cons3 = (req, res) => {
     });
 };
 
+controller.cons4 = (req, res) => {
+    req.getConnection((err, conn) => {
+        conn.query('SELECT padre.id, padre.nom, count(padre.nom) as quantity FROM hijo right outer join padre on padre.id=hijo.hijode where hijo.hijode = padre.id and padre.id!=0 group by id;', (err, rows) => {
+            console.log(err)
+            console.log(rows)
+            res.render('consulta4', {
+                data: rows,
+                error: 0
+            });
+        });
+    });
+};
 module.exports = controller;
