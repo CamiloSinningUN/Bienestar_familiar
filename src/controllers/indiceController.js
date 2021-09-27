@@ -42,7 +42,7 @@ controller.cons2 = (req, res) => {
 
 controller.cons3 = (req, res) => {
     req.getConnection((err, conn) => {
-        conn.query('SELECT id, nom, coalesce(hijode,"No tiene padre")as padre from hijo;', (err, rows) => {
+        conn.query('select id, nom from hijo where hijode = 0;', (err, rows) => {
             console.log(err)
             console.log(rows)
             res.render('consulta3', {
