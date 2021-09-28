@@ -28,7 +28,7 @@ controller.crud_padres = (req, res) => {
 };
 
 controller.mis_hijos = (req, res) => {
-    const data = req.body;
+    const data = req.params.id;
     req.getConnection((err, conn) => {
         conn.query('SELECT * FROM padre;', (err, rows1) => {
             conn.query('SELECT hijo.id, hijo.nom FROM hijo where hijode = ?;',data, (err, rows2) => {
