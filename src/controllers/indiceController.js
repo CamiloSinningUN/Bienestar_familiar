@@ -27,6 +27,39 @@ controller.crud_padres = (req, res) => {
     });
 };
 
+controller.mis_hijos = (req, res) => {
+    const data = req.body;
+    req.getConnection((err, conn) => {
+        conn.query('SELECT * FROM padre;', (err, rows1) => {
+            conn.query('SELECT hijo.id, hijo.nom FROM hijo where hijode = ?;',data, (err, rows2) => {
+                console.log(rows1)
+                console.log(rows2)
+                console.log(data)
+                res.render('consulta1', {
+                    data_padres: rows1,
+                    data_hijos: rows2,
+                    error: 0
+                });
+            });
+        });
+        
+    });
+};
+
+controller.cons1 = (req, res) => {
+    req.getConnection((err, conn) => {
+        conn.query('SELECT * FROM padre;', (err, rows) => {
+            console.log(err)
+            console.log(rows)
+            res.render('consulta1', {
+                data_padres: rows,
+                data_hijos: null,
+                error: 0
+            });
+        });
+    });
+};
+
 controller.cons2 = (req, res) => {
     req.getConnection((err, conn) => {
         conn.query('SELECT * FROM hijo right outer join padre on padre.id=hijo.hijode where hijo.hijode is null;', (err, rows) => {
@@ -55,7 +88,7 @@ controller.cons3 = (req, res) => {
 
 controller.cons4 = (req, res) => {
     req.getConnection((err, conn) => {
-        conn.query('SELECT padre.id, padre.nom, count(padre.nom) as quantity FROM hijo right outer join padre on padre.id=hijo.hijode where hijo.hijode = padre.id and padre.id!=0 group by id;', (err, rows) => {
+        conn.query('select padre.id, padre.nom, count(hijo.id) as Cantidad_Hijos from padre left join hijo on padre.id=hijo.hijode where padre.id!=0 group by padre.id;', (err, rows) => {
             console.log(err)
             console.log(rows)
             res.render('consulta4', {

@@ -120,6 +120,14 @@ img {
   align-items: stretch;
   align-content: flex-start;
 }
+.consulta{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  margin: auto;
+}
 .container2 {
   margin-top: 0px;
   display: flex;

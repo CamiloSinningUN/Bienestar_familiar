@@ -4,6 +4,7 @@ const controller = {};
 
 controller.save = (req, res) => {
     const data = req.body;
+    console.log(req)
     req.getConnection((err, connection) => {
         connection.query('INSERT INTO hijo set ?', data, (err, rows) => {
             if(err){
