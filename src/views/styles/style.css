@@ -140,7 +140,6 @@ img {
 .edit_card{
   margin-top: 20px;
   margin-left: 0;
-  display: flex;
   border-width: thin;
   border-color: #191d32;
   border-style: solid;
