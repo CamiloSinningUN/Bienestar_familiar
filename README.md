@@ -41,7 +41,7 @@ Abrir el proyecto con el editor de código de preferencia.
 * **Sthephany Rojas** - *Base de datos* - [sthephanyr15](https://github.com/sthephanyr15)
 * **Jorge Salazar**
 
-Mirar la lista de todos los [contribuyentes](https://github.com/CamiloSinningUN/Graficador/contributors) quíenes han participado en este proyecto. 
+Mirar la lista de todos los [contribuyentes](https://github.com/CamiloSinningUN/Bienestar_familiar/contributors) quíenes han participado en este proyecto. 
 
 
 
