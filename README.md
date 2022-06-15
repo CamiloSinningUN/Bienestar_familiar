@@ -1,48 +1,47 @@
-# Bienestar_familiar
+# Bienestar familiar
 
-Pagina web la cual administra una base de datos en SQL que continene la información de un sistema inspirado en el Bienestar Familiar.
+Web page which manages a database in SQL that contains the information of a system inspired by Bienestar familiar.
 
+## Preview 
 
-## Comenzando 🚀
+![beinestarprev](https://user-images.githubusercontent.com/61607058/173724703-8a1288cc-652b-4c1e-b51e-242fcf115f4e.png)
 
-Puede obtener una copia del proyecto simplemente descargandolo desde este repositorio.
+## Starting 🚀
 
-Mira **Despliegue** para conocer como desplegar el proyecto.
+You can get a copy of the project simply by downloading it from this repository.
 
-### Pre-requisitos 📋
+See **Deployment** to learn how to deploy the project.
 
-*	Tener el servicio de MySQL en ejecución.
-*	Crear una base de datos llamada bienestar_familiar.
-*	Ejecutar el Query que se encuentra en la carpeta database del proyecto en la base de datos.
-*	En el archivo index.js entre las líneas 21-25 modificar la configuración necesaria, es decir, user, password, etc.
+### Pre-requisites 📋
 
-### Instalación 🔧
+* Have the MySQL service running.
+* Create a database called bienestar_familiar.
+* Execute the Query found in the database folder of the project in the database.
+* In the index.js file between lines 21-25 modify the necessary configuration, that is, user, password, etc.
 
-Para la correcta instalación de los recursos descargar las librerias usando node.js a través de la consola.
+### Installation 🔧
 
-## Despliegue 📦
+For the correct installation of the resources, download the libraries using node.js through the console.
 
-Abrir el proyecto con el editor de código de preferencia.
+## Deployment 📦
 
-## Construido con 🛠️
+Open the project with the preferred code editor.
+
+## Built with 🛠️
 
 * Visual Studio Code - IDE
 * Node.js
 * Express.js
 * body-parser
-* ejs
-* morgan
-* mysql
+*ex
+* Morgan
+*mysql
 
-## Autores ✒️
+## Authors ✒️
 
-* **Camilo Sinning** - *Programación Front-End* - [CamiloSinningUN](https://github.com/CamiloSinningUN)
-* **Dilan Triana** - *Programación Back-End* - [Tdilan395](https://github.com/Tdilan395)
-* **Sthephany Rojas** - *Base de datos* - [sthephanyr15](https://github.com/sthephanyr15)
+* **Camilo Sinning** - *Front-End Programming* - [CamiloSinningUN](https://github.com/CamiloSinningUN)
+* **Dilan Triana** - *Back-End Programming* - [Tdilan395](https://github.com/Tdilan395)
+* **Sthephany Rojas** - *Database* - [sthephanyr15](https://github.com/sthephanyr15)
 * **Jorge Salazar**
 
-Mirar la lista de todos los [contribuyentes](https://github.com/CamiloSinningUN/Bienestar_familiar/contributors) quíenes han participado en este proyecto. 
-
-
-
- 
+See the list of all [contributors](https://github.com/CamiloSinningUN/Bienestar_familiar/contributors) who have participated in this project.
